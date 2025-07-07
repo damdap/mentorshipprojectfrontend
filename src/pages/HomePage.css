@@ -1,0 +1,47 @@
+.home-container {
+  font-family: sans-serif;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero {
+  background-color: #0077ff;
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 10px;
+}
+
+.cta-button {
+  background-color: white;
+  color: #0077ff;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.how-it-works, .roles {
+  margin-top: 4rem;
+}
+
+.steps, .role-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #666;
+}

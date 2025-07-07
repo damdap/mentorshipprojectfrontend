@@ -1,18 +1,36 @@
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './pages/Home';
+import Login from './auth/Login';
+import RegisterPage from './pages/RegisterPage';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+import MentorDirectory from './pages/MentorDirectory';
+import MentorProfile from './pages/MentorProfile';
+import RequestMentorship from './pages/RequestMentorship';
+import MentorDashboard from './pages/MentorDashboard';
+
 
 function App() {
-
   return (
-    <>
-      <div className='bg-blue-100 min-h-screen flex items-center justify-center color-scheme dark:bg-gray-900 dark:text-white'>
-        <h1>My Mentorship Match App</h1>
-        <p>Welcome to the mentorship matching platform!</p>
-        <p>Connect with mentors and mentees to enhance your learning journey.</p>
-        <p>Explore various mentorship opportunities and find the right match for your growth.</p>
-        <p>Join us today and start your mentorship journey!</p>
-      </div> 
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/mentors" element={<MentorDirectory />} />
+      <Route path="/mentors/:id" element={<MentorProfile />} />
+      <Route path="/mentors/:id/request" element={<RequestMentorship />} />
+      <Route path="/mentor/dashboard" element={<MentorDashboard />} />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
